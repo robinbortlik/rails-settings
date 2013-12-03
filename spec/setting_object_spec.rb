@@ -108,8 +108,8 @@ describe RailsSettings::SettingObject do
       new_setting_object.id.should_not be_zero
     end
 
-    it 'should not save blank hash' do
-      new_setting_object.update_attributes({}).should be_false
+    it 'should save blank hash' do
+      new_setting_object.update_attributes({}).should be_true
     end
 
     if ActiveRecord::VERSION::MAJOR < 4
